@@ -1,0 +1,136 @@
+---
+import { Image } from 'astro:assets';
+import LogoWeb from '../../assets/images/TDB.LOGO.png';
+---
+
+<section id="contacto" class="py-16 lg:py-20 bg-green-50">
+    <div class="max-w-5xl mx-auto px-6">
+        
+        <div class="text-center mb-10">
+            <Image 
+                src={LogoWeb} 
+                alt="Logo de Turismo del Bosque" 
+                class="mx-auto mb-4 w-20 h-20 rounded-full shadow-md"
+                loading="lazy"
+                quality="mid"
+            />
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+                Hablemos de tu viaje
+            </h2>
+            <p class="text-gray-600">
+                Estamos para responder tus dudas y ayudarte a organizar tu estadía
+            </p>
+        </div>
+        
+        <div class="flex flex-wrap justify-center gap-4 mb-10">
+            <a 
+                href="https://wa.me/56974981352" 
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-3 bg-white px-5 py-3 rounded-xl shadow hover:shadow-lg transition-all"
+            >
+                <i class="fa-brands fa-whatsapp text-2xl text-green-500"></i>
+                <div class="text-left">
+                    <div class="text-xs text-gray-500">WhatsApp</div>
+                    <div class="text-sm font-semibold text-gray-900">+56 9 7498 1352</div>
+                </div>
+            </a>
+
+            <a 
+                href="tel:+56974413361"
+                class="flex items-center gap-3 bg-white px-5 py-3 rounded-xl shadow hover:shadow-lg transition-all"
+            >
+                <i class="fa-solid fa-phone text-2xl text-blue-500"></i>
+                <div class="text-left">
+                    <div class="text-xs text-gray-500">Teléfono</div>
+                    <div class="text-sm font-semibold text-gray-900">+56 9 8346 8174</div>
+                </div>
+            </a>
+
+            <a 
+                href="mailto:reservas.tdb@gmail.com"
+                class="flex items-center gap-3 bg-white px-5 py-3 rounded-xl shadow hover:shadow-lg transition-all"
+            >
+                <i class="fa-solid fa-envelope text-2xl text-orange-500"></i>
+                <div class="text-left">
+                    <div class="text-xs text-gray-500">Email</div>
+                    <div class="text-sm font-semibold text-gray-900">reservas.tdb@gmail.com</div>
+                </div>
+            </a>
+        </div>
+        
+        <div class="bg-white rounded-xl p-8 max-w-3xl mx-auto shadow-md">
+            <h3 class="text-xl font-bold text-gray-900 mb-6">Envíanos un mensaje</h3>
+            
+            <form action="#" method="POST" class="space-y-5">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                        <label for="nombre" class="block font-medium text-gray-700 mb-2 text-sm">
+                            Tu nombre
+                        </label>
+                        <input 
+                            type="text" 
+                            id="nombre" 
+                            name="nombre" 
+                            required 
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-400 focus:outline-none"
+                        />
+                    </div>
+
+                    <div>
+                        <label for="email" class="block font-medium text-gray-700 mb-2 text-sm">
+                            Tu correo
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required 
+                            class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-400 focus:outline-none"
+                        />
+                    </div>
+                </div>
+
+                <div>
+                    <label for="telefono" class="block font-medium text-gray-700 mb-2 text-sm">
+                        Teléfono <span class="text-gray-400">(opcional)</span>
+                    </label>
+                    <input 
+                        type="tel" 
+                        id="telefono" 
+                        name="telefono" 
+                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-400 focus:outline-none"
+                    />
+                </div>
+
+                <div>
+                    <label for="mensaje" class="block font-medium text-gray-700 mb-2 text-sm">
+                        Tu mensaje
+                    </label>
+                    <textarea 
+                        id="mensaje" 
+                        name="mensaje" 
+                        rows="5" 
+                        required
+                        class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-400 focus:outline-none resize-none"
+                    ></textarea>
+                </div>
+
+                <button 
+                    type="submit"
+                    class="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-lg font-bold shadow-md hover:shadow-lg transition-all"
+                >
+                    Enviar mensaje
+                </button>
+            </form>
+        </div>
+
+        <div class="mt-8 text-center">
+            <p class="text-gray-600 flex items-center justify-center gap-2">
+                <i class="fas fa-map-marker-alt text-green-600"></i>
+                <span>Castro, Chiloé, Chile</span>
+            </p>
+        </div>
+
+    </div>
+</section>

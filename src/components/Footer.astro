@@ -1,0 +1,58 @@
+---
+import { ItemMenu } from '../data/ItemMenu';
+import { siteInfo } from '../data/siteInfo';
+import LogoWeb from '../assets/images/TDB.LOGO.png';
+
+const currentYear = new Date().getFullYear();
+---
+ <!-- Fondo -->
+<footer class="bg-green-900 text-gray-300 border-t border-green-800">
+    <div class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            
+            <div class="sm:col-span-2 lg:col-span-1">
+                <a href="/" class="flex items-center gap-3 mb-4 group">
+                    <img src={LogoWeb.src} alt="Logo Turismo del Bosque" class="w-14 h-14 rounded-full">
+                    <span class="text-xl font-bold text-white">Turismo del Bosque</span>
+                </a>
+                <p class="text-sm text-white-400 font-normal">Tu refugio en el corazón de Chiloé. Conecta con la naturaleza, crea recuerdos.</p>
+            </div>
+            <!-- Enlaces-->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">Navegación</h3>
+                <ul class="space-y-3 text-sm font-normal">
+                    {ItemMenu.map(item => (
+                        <li><a href={item.href} class="hover:text-yellow-400 transition-colors">{item.texto}</a></li>
+                    ))}
+                </ul>
+            </div>
+         <!-- Infomarcion del contacto-->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">Contacto</h3>
+                <ul class="space-y-3 text-sm font-normal">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-envelope text-yellow-400 w-4 pt-1"></i>
+                        <a href={`mailto:${siteInfo.contact.email}`} class="hover:text-yellow-400">{siteInfo.contact.email}</a>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-brands fa-whatsapp text-yellow-400 w-4 pt-1"></i>
+                        <a href={`https://wa.me/${siteInfo.contact.phone}`} class="hover:text-yellow-400">{siteInfo.contact.phoneFormatted}</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- redes sociales -->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">Síguenos</h3>
+                <div class="flex gap-5 text-2xl">
+                    {siteInfo.socials.map(social => (
+                        <a href={social.href} aria-label={social.name} target="_blank" class="text-gray-400 hover:text-yellow-400 transition-colors">
+                            <i class={social.icon}></i>
+                        </a>
+                    ))}
+                </div>
+            </div>
+            
+       </div>
+    </div>
+    
+</footer>

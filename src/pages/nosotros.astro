@@ -1,0 +1,157 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+import portadaImg from '../assets/images/Nature.1.jpg';
+import historiaImg from '../assets/images/Nosotros-TDB.jpeg';
+import avatar1 from '../assets/images/PerfilAF1.jpg';
+import avatar2 from '../assets/images/PerfilAF2.jpg';
+---
+
+<Layout
+    title="Nuestra Historia - Turismo del Bosque"
+    description="Descubre la historia y el alma detrás de Turismo del Bosque, un proyecto familiar nacido del amor por Chiloé y la naturaleza."
+>
+    <div class="pt-20">
+        
+        <!-- Hero -->
+        <header class="relative py-20 bg-gradient-to-b from-gray-900 to-emerald-900">
+            <div class="absolute inset-0">
+                <Image 
+                    src={portadaImg} 
+                    alt="Paisaje de Chiloé" 
+                    class="w-full h-full object-cover opacity-80"
+                    loading="eager"
+                />
+            </div>
+            
+            <div class="relative max-w-4xl mx-auto px-6 text-center text-white">
+                <div class="mb-6">
+                    <span class="inline-block bg-green-700/80 px-5 py-2 rounded-full text-sm font-medium">
+                        NUESTRA HISTORIA
+                    </span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                    El alma de nuestro refugio
+                </h1>
+                
+                <p class="text-lg md:text-xl mb-10 opacity-90 max-w-2xl mx-auto">
+                    Un proyecto familiar nacido del amor por Chiloé y el deseo de compartir su magia con el mundo.
+                </p>
+            </div>
+        </header>
+
+        <!-- Nuestra Historia  -->
+        <section class="py-16 lg:py-24 bg-white">
+            <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1">
+                    <span class="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-bold mb-4">
+                        NUESTRAS RAÍCES
+                    </span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
+                        Un sueño tejido en el corazón del bosque
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        <strong>Turismo del Bosque</strong> nació de un anhelo: crear un santuario donde la calidez de un hogar familiar se fusionara con la imponente belleza del sur de Chile. Siempre soñamos con un lugar para compartir la paz que sentimos aquí, entre los árboles nativos y con el sonido de las aves como banda sonora.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Construimos cada cabaña y domo con nuestras propias manos y corazón, pensando en cada detalle para que no solo sea un lugar donde dormir, sino un espacio para reconectar.
+                    </p>
+                </div>
+                <div class="order-1 lg:order-2 rounded-2xl shadow-xl overflow-hidden group">
+                    <Image 
+                        src={historiaImg} 
+                        alt="Turismo del Bosque" 
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                </div>
+            </div>
+        </section>
+
+
+    <!-- Anfitriones -->
+        <section class="py-16 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="text-center mb-12">
+                    <span class="inline-block bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full text-sm font-bold mb-4">
+                        NUESTRO EQUIPO
+                    </span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                        Tus anfitriones
+                    </h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto">
+                        Somos quienes te daremos la bienvenida y nos aseguraremos de que tu estadía sea inolvidable
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Anfitrión 1 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow text-center">
+                        <div class="relative inline-block mb-4">
+                            <Image 
+                                src={avatar1} 
+                                alt="Anfitriona" 
+                                class="w-24 h-24 rounded-full object-cover shadow-lg mx-auto"
+                            />
+                            <div class="absolute -bottom-1 -right-1 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-heart text-white text-xs"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Luisa Pinquil</h3>
+                        <p class="text-green-600 font-semibold mb-3">Fundadora y Anfitriona</p>
+                        <p class="text-gray-600 text-sm leading-relaxed italic">
+                            "Mi pasión es cuidar cada detalle para que te sientas como en casa y te lleves un pedacito de la magia de Chiloé."
+                        </p>
+                    </div>
+
+                    <!-- Anfitrión 2 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow text-center">
+                        <div class="relative inline-block mb-4">
+                            <Image 
+                                src={avatar2} 
+                                alt="Anfitrión" 
+                                class="w-24 h-24 rounded-full object-cover shadow-lg mx-auto"
+                            />
+                            <div class="absolute -bottom-1 -right-1 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                                <i class="fas fa-mountain text-white text-xs"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Carlos Ojeda</h3>
+                        <p class="text-green-600 font-semibold mb-3">Fundador y Encargado</p>
+                        <p class="text-gray-600 text-sm leading-relaxed italic">
+                            "Disfruto compartiendo las historias de la isla y recomendando esos rincones secretos que no aparecen en los mapas."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Video de presentacion -->
+  <section class="py-16 bg-emerald-50">
+      <div class="max-w-4xl mx-auto px-6">
+          <div class="text-center mb-10">
+              <span class="inline-block bg-red-500 text-white px-4 py-2 rounded-full text-xs font-bold mb-4">
+                          <i class="fab fa-youtube mr-1"></i> VIDEO
+                      </span>
+              <h2 class="text-3xl font-bold text-gray-900 mb-3">Conoce nuestro refugio</h2>
+              <p class="text-gray-600 max-w-2xl mx-auto">
+                  Un recorrido por nuestras cabañas, domos y los paisajes de Chiloé.
+              </p>
+          </div>
+
+          <div class="aspect-video rounded-xl overflow-hidden shadow-lg border border-emerald-200">
+              <iframe 
+                  src="https://www.youtube.com/embed/eg-Af4DLNbA?rel=0"
+                  title="Turismo del Bosque - Video Presentación"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  class="w-full h-full"
+              ></iframe>
+          </div>
+      </div>
+  </section>
+
+    </div>
+</Layout>

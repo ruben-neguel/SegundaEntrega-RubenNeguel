@@ -1,0 +1,44 @@
+---
+import { ItemMenu } from '../data/ItemMenu';
+import LogoWeb from '../assets/images/TDB.LOGO.png';
+---
+
+<header class="bg-green-900 text-white fixed top-0 w-full shadow-lg z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
+        <!-- Logo y nombre del web -->
+        <a href="/" class="flex items-center gap-3 text-xl font-bold">
+            <img src={LogoWeb.src} class="h-12 rounded-full" alt="Logo de Turismo del Bosque">
+            <span>Turismo del Bosque</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 font-medium text-lg">
+            {ItemMenu.map(item => (
+                <a href={item.href} class="py-2 hover:text-yellow-400 transition-colors">{item.texto}</a>
+            ))}
+        </nav>
+        
+        <button id="menu-btn" class="md:hidden text-2xl" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-green-800">
+        <nav class="flex flex-col px-6 py-4">
+            {ItemMenu.map(item => (
+                <a href={item.href} class="py-2 text-lg hover:text-yellow-400 transition-colors">{item.texto}</a>
+            ))}
+        </nav>
+    </div>
+</header>
+
+<script>
+    // Selección de elementos
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+</script>

@@ -1,0 +1,74 @@
+---
+// Ruta: src/components/MapaUbicacion.astro
+
+const mapLink = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3511.123456789!2d-73.794081!3d-42.509656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96221852cd87644f%3A0xfe1e781e1e8b7fe9!2sTurismo%20Del%20Bosque%20Caba%C3%B1as%20Y%20Domos!5e0!3m2!1ses!2scl!4v1694067890123!5m2!1ses!2scl";
+const googleMapsLink = "https://maps.app.goo.gl/a8uGfN9C3c6sD52s9";
+---
+
+<section id="ubicacion" class="py-24 bg-gradient-to-br from-stone-50 to-emerald-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            <div class="relative text-center lg:text-left">
+                <div class="absolute -top-6 -left-6 w-24 h-24 bg-emerald-100 rounded-full opacity-30 -z-10"></div>
+                
+                <div class="inline-flex items-center justify-center bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full mb-8">
+                    <span class="font-semibold tracking-wide">UBICACIÓN PRIVILEGIADA</span>
+                </div>
+                
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-8">
+                    Donde la calma se une<br class="hidden md:block"/>
+                    <span class="text-emerald-700">con la aventura</span>
+                </h2>
+                
+                <p class="text-gray-600 mb-10 leading-relaxed">
+                    Nuestra ubicación privilegiada te ofrece lo mejor de dos mundos: 
+                    la paz del bosque nativo y la conveniencia de estar a solo minutos 
+                    del corazón de Castro.
+                </p>
+
+                <ul class="space-y-5 mb-10">
+                    <li class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <i class="fa-solid fa-car text-emerald-600"></i>
+                        </div>
+                        <span class="text-gray-700 font-medium">A 5 km del centro de Castro</span>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <i class="fa-solid fa-tree text-emerald-600"></i>
+                        </div>
+                        <span class="text-gray-700 font-medium">Inmerso en la tranquilidad del bosque</span>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <i class="fa-solid fa-route text-emerald-600"></i>
+                        </div>
+                        <span class="text-gray-700 font-medium">Acceso directo a las rutas de la isla</span>
+                    </li>
+                </ul>
+
+                <a 
+                    href={googleMapsLink}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="group inline-flex items-center bg-green-700 hover:bg-green-800 text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                >
+                    <span>Ver en Google Maps</span>
+                </a>
+            </div>
+
+            <div class="w-full h-[500px] rounded-2xl shadow-xl overflow-hidden border-4 border-white">
+                <iframe 
+                    src={mapLink}
+                    class="w-full h-full"
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
+

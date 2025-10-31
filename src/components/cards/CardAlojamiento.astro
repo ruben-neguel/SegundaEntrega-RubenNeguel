@@ -1,0 +1,50 @@
+---
+import type { Alojamiento } from '../../data/alojamientos';
+import { Image } from 'astro:assets';
+
+// las props que recibe el componente
+export interface Props {
+    alojamiento: Alojamiento;
+}
+
+const { alojamiento } = Astro.props;
+---
+
+<!-- Card click -->
+<a href={`/alojamientos/${alojamiento.id}/`} class="block bg-white rounded-2xl shadow-lg overflow-hidden group transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+    
+    <!-- efecto zoom -->
+    <div class="relative overflow-hidden">
+        <!-- Etiqueta -->
+        {alojamiento.tag && (
+            <span class:list={[
+                "absolute top-4 right-4 text-white text-xs px-3 py-1 rounded-full z-10 font-semibold",
+                alojamiento.tag.color
+            ]}>
+                {alojamiento.tag.texto}
+            </span>
+        )}
+        
+        <!-- Imagen optimizada -->
+        <Image 
+            src={alojamiento.imagen} 
+            alt={`Imagen de ${alojamiento.titulo}`} 
+            class="w-full h-64 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+        />
+    </div>
+    
+    <!-- Contenedor del contenido-->
+    <div class="p-6">
+        <!-- Titulo -->
+        <h3 class="font-bold text-xl text-gray-800">{alojamiento.titulo}</h3>
+        
+        <!-- Subtitulo -->
+        <p class="text-sm text-gray-500 font-normal mt-1">{alojamiento.subtitulo}</p>
+        
+        <!-- Información de capacidad con icono de usuarios -->
+        <div class="flex items-center text-gray-600 mt-4 pt-4 border-t border-gray-100">
+            <i class="fas fa-users text-sm text-green-700"></i>
+            <span class="ml-2 font-medium">{alojamiento.capacidad}</span>
+        </div>
+    </div>
+</a>

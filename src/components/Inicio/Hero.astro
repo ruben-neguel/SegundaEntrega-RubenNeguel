@@ -1,0 +1,61 @@
+---
+import { Image } from 'astro:assets';
+import muelleBrujosImg from '../../assets/images/Muelle-los-brujos.jpg';
+---
+
+<section id="inicio" class="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden">
+    <div class="absolute inset-0">
+        <Image 
+            src={muelleBrujosImg} 
+            alt="Muelle de los brujos en Chiloé" 
+            class="absolute inset-0 w-full h-full object-cover ken-burns"
+            loading="eager"
+            quality="high"
+        />
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+    
+    <div class="relative z-10 px-5 animate-fade-in-up">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">La Magia te Espera</h1>
+        <p class="text-lg md:text-2xl mb-8 max-w-3xl mx-auto font-normal">
+            Descubre la naturaleza virgen y los mitos de Chiloé. Tu aventura comienza aquí.
+        </p>
+        <a href="/guias/" class="bg-yellow-400 text-green-900 px-8 py-3 rounded-lg font-bold text-lg hover:bg-yellow-300 shadow-lg transform hover:-translate-y-1 transition-all">
+            Comienza a Explorar
+        </a>
+    </div>
+
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+        <a href="#info" aria-label="Ir a la siguiente sección">
+            <i class="fas fa-chevron-down text-white text-3xl opacity-70"></i>
+        </a>
+    </div>
+</section>
+
+<style>
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .animate-fade-in-up {
+        animation: fadeInUp 1s ease-out forwards;
+    }
+
+    @keyframes kenburns {
+        from {
+            transform: scale(1);
+        }
+        to {
+            transform: scale(1.1);
+        }
+    }
+    .ken-burns {
+        animation: kenburns 15s ease-out forwards;
+    }
+</style>

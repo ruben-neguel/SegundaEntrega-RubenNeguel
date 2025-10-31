@@ -1,0 +1,108 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import { todosLosAlojamientos } from '../data/alojamientos';
+import CardAlojamiento from '../components/cards/CardAlojamiento.astro';
+
+// Imagen de portada principal
+import portadaRefugios from '../assets/images/Nosotros-TDB.jpeg';
+import bosqueImg from '../assets/images/Nosotros1-TDB.jpeg';
+---
+
+<Layout
+    title="Refugios — Turismo del Bosque"
+    description="Cada refugio es una invitación a la desconexión. Diseñados para integrarse con la naturaleza de Chiloé."
+>
+    <div class="pt-20">
+        
+        <!-- Hero-->
+  <header class="relative py-20 bg-gradient-to-b from-gray-900 to-emerald-900">
+      <div class="absolute inset-0">
+          <Image 
+              src={portadaRefugios} 
+              alt="Cielo estrellado sobre Chiloé" 
+              class="w-full h-full object-cover opacity-80"
+              loading="eager"
+          />
+      </div>
+     
+       <!--Info de hero -->
+      <div class="relative max-w-4xl mx-auto px-6 text-center text-white">
+          <div class="mb-6">
+              <span class="inline-block bg-green-700/80 px-5 py-2 rounded-full text-sm font-medium">
+                  REFUGIOS EN CHILOÉ
+              </span>
+          </div>
+        
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">
+              El refugio es el destino
+          </h1>
+        
+          <p class="text-lg md:text-xl mb-10 opacity-90 max-w-2xl mx-auto">
+              Desconecta del ruido del mundo y reconecta con la esencia de la naturaleza. 
+              Nuestros refugios son tu puerta de entrada a la magia silenciosa de Chiloé.
+          </p>
+        
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="#refugios" class="bg-green-600 hover:bg-green-700 text-white px-7 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition">
+                Explorar Refugios
+              </a>
+              <a href="/contacto/" class="bg-white/10 hover:bg-white/20 border border-white/30 text-white px-7 py-3 rounded-lg font-semibold transition">
+                  Consultar Disponibilidad
+              </a>
+           </div>
+       </div>
+    </header>
+
+        <!-- Intro de aloja -->
+        <section class="py-16 bg-white">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <Image 
+                            src={bosqueImg} 
+                            alt="Bosque nativo de Chiloé" 
+                            class="rounded-2xl shadow-xl w-full h-80 object-cover"
+                        />
+                    </div>
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                            Diseñados con el alma del bosque
+                        </h2>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Cada refugio nace de una profunda conexión con el entorno natural de Chiloé. 
+                            Utilizamos materiales locales, técnicas tradicionales y un diseño que respeta 
+                            el paisaje que nos rodea.
+                        </p>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            No construimos sobre la naturaleza, construimos con ella. 
+                            Cada ventana enmarca un paisaje diferente, cada rincón invita a la contemplación.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Los refugios -->
+        <section id="refugios" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                        Encuentra tu refugio perfecto
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        Desde acogedoras cabañas hasta innovadores domos geodésicos. 
+                        Cada espacio está diseñado para ofrecerte comodidad y una conexión única con la naturaleza chilota.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {todosLosAlojamientos.map((alojamiento) => (
+                        <CardAlojamiento alojamiento={alojamiento} />
+                    ))}
+                </div>
+            </div>
+        </section>
+    </div>
+</Layout>
+

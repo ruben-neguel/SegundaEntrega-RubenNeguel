@@ -1,0 +1,84 @@
+---
+// Importación de la imagen y componente de optimización
+import { Image } from 'astro:assets';
+import infoImage from '../../assets/images/Domo 1 (6-7 personas).jpg';
+---
+
+<!-- informacion -->
+   <section id="info" class="py-20 bg-gradient-to-b from-white to-emerald-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="text-center lg:text-left order-2 lg:order-1">
+  
+          <div class="inline-flex items-center justify-center bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full mb-6">
+            <span class="font-semibold tracking-wide">UN SUEÑO FAMILIAR</span>
+          </div>
+        
+          <!-- Titulo principal-->
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
+            Un refugio creado <span class="text-emerald-700">con alma</span>
+          </h2>
+        
+          <!-- Descripción del negocio -->
+          <p class="text-gray-600 mb-8 leading-relaxed">
+            Más que un alojamiento, <strong>Turismo del Bosque</strong> es nuestro sueño de compartir la paz de la naturaleza sureña. Un lugar pensado para la desconexión, donde cada detalle está cuidado para que recargues energías.
+          </p>
+
+          <!-- Lista iconos y su informacion -->
+          <div class="space-y-4 mb-10 max-w-md mx-auto lg:mx-0">
+            <div class="flex items-start gap-3">
+              <div class="flex-shrink-0 mt-0.5">
+                <i class="fa-solid fa-hand-holding-heart text-emerald-600"></i>
+              </div>
+              <span class="text-gray-700 font-medium">Atención familiar y personalizada</span>
+            </div>
+          
+            <div class="flex items-start gap-3">
+              <div class="flex-shrink-0 mt-0.5">
+                <i class="fa-solid fa-leaf text-emerald-600"></i>
+              </div>
+              <span class="text-gray-700 font-medium">Entorno natural para desconectar</span>
+            </div>
+          
+            <div class="flex items-start gap-3">
+              <div class="flex-shrink-0 mt-0.5">
+                <i class="fa-solid fa-map-location-dot text-emerald-600"></i>
+              </div>
+              <span class="text-gray-700 font-medium">Ubicación estratégica cerca de Castro</span>
+            </div>
+          </div>
+
+          <!-- Botones -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
+            <a 
+              href="/alojamientos/" 
+              class="bg-green-800 text-white px-8 py-3 rounded-lg font-bold hover:bg-green-700 shadow-lg transform hover:-translate-y-1 transition-all inline-block w-full sm:w-auto text-center"
+            >
+              Explorar Refugios
+            </a>
+          
+            <a 
+              href="/nosotros/" 
+              class="group font-semibold text-green-700 hover:text-green-600 transition inline-flex items-center"
+            >
+              Nuestra Historia
+            </a>
+         </div>
+        </div>
+
+        <!-- Columna de imagen-->
+        <div class="relative order-1 lg:order-2">
+          <div class="relative rounded-2xl shadow-lg overflow-hidden border border-gray-100 group">
+            <Image 
+              src={infoImage} 
+              alt="Interior acogedor de un domo en Turismo del Bosque" 
+              class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+              widths={[400, 800, 1000]}
+              sizes="(max-width: 1024px) 90vw, 40vw"
+            />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,101 @@
+---
+
+import { Image } from 'astro:assets';
+import { todasLasOpiniones } from '../../data/opiniones';
+import StarRating from './StarRating.astro'; 
+
+---
+  <!-- Fondo -->
+<section id="opiniones" class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-8 text-center">Que dicen nuestros visitantes</h2>
+        <!-- calificacion -->
+        <div class="flex items-center justify-center mt-4 mb-12 space-x-2">
+            <p class="text-xl font-bold text-gray-700">4.9</p>
+            <div class="flex text-yellow-400">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="text-gray-500">(Basado en 108 opiniones)</p>
+        </div>
+
+        <div id="carouselContainer" class="relative overflow-hidden rounded-2xl">
+            <div id="carouselOpiniones" class="flex transition-transform duration-700 ease-in-out">
+                
+                {todasLasOpiniones.map(opinion => (
+                    <div class="min-w-full p-1">
+                        <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 h-full">
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="flex items-center">
+                                    <Image src={opinion.avatar} alt={`Avatar de ${opinion.nombre}`} class="w-12 h-12 rounded-full mr-4 object-cover"/>
+                                    <div>
+                                        <p class="font-semibold text-gray-800">{opinion.nombre}</p>
+                                        <p class="text-sm text-gray-500">{opinion.fecha}</p>
+                                    </div>
+                                </div>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Logo de Google" class="w-6 h-6 opacity-75">
+                            </div>
+
+                            <div class="mb-3">
+                                <StarRating rating={opinion.rating} />
+                            </div>
+                            
+                            <p class="text-gray-600 leading-relaxed">"{opinion.texto}"</p>
+                        </div>
+                    </div>
+                ))}
+
+            </div>
+
+            <button id="prev-btn" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white transition">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-gray-700"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" /></svg>
+            </button>
+            <button id="next-btn" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white transition">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-gray-700"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
+            </button>
+        </div>
+
+        <div class="text-center mt-10">
+            <a href="https://www.google.com/maps/place/Turismo+Del+Bosque+Caba%C3%B1as+Y+Domos/@-42.5096559,-73.7940812,646m/data=!3m1!1e3!4m11!3m10!1s0x96221852cd87644f:0xfe1e781e1e8b7fe9!5m2!4m1!1i2!8m2!3d-42.5096559!4d-73.7940812!9m1!1b1!16s%2Fg%2F11cs5ljzq1?entry=ttu&g_ep=EgoyMDI1MDkxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-md hover:bg-blue-700 transition">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" class="w-5 h-5 mr-2">
+                Ver más reseñas en Google
+            </a>
+        </div>
+    </div>
+</section>
+
+<script is:inline>
+    const carouselContainer = document.getElementById("carouselContainer");
+    const carousel = document.getElementById("carouselOpiniones");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+
+    let currentIndex = 0;
+    let autoSlideInterval;
+
+    function moverOpiniones(direction) {
+        if (!carousel) return;
+        const totalSlides = carousel.children.length;
+        currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function startAutoSlide() {
+        stopAutoSlide(); 
+        autoSlideInterval = setInterval(() => {
+            moverOpiniones(1);
+        }, 5000);
+    }
+
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+
+    if (carouselContainer && prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => moverOpiniones(-1));
+        nextBtn.addEventListener('click', () => moverOpiniones(1));
+
+        startAutoSlide();
+        carouselContainer.addEventListener('mouseenter', stopAutoSlide);
+        carouselContainer.addEventListener('mouseleave', startAutoSlide);
+    }
+</script>
