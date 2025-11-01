@@ -18,7 +18,7 @@ Dentro del proyecto Astro encontrarás la siguiente estructura de carpetas y arc
 |   ├── Footer.astro
 │   ├── Header.astro 
 │   |
-|   ├── data/
+|   ├── data/            # Datos del sitio
 │   │   ├── alojamientos.ts
 │   │   ├── guias.ts
 │   │   ├── ItemMenu.ts
@@ -28,7 +28,7 @@ Dentro del proyecto Astro encontrarás la siguiente estructura de carpetas y arc
 │   |── layouts/
 │   |    └── Layout.astro
 |   | 
-│   ├── pages/
+│   ├── pages/            # Rutas del sitio
 │   │   ├── alojamientos/
 │   │   │   └── [id].astro - Detalle de alojamiento
 │   │   ├── guias/
@@ -44,11 +44,11 @@ Dentro del proyecto Astro encontrarás la siguiente estructura de carpetas y arc
 ```
 ## 🛠️ Tecnologías
 
-- [Astro](https://astro.build) 
-- TypeScript/JS - 
-- Tailwind CSS - 
-- Lightbox/FontAwesome -
-
+- [Astro](https://astro.build) - 
+- TypeScript - 
+- Tailwind CSS -
+- Lightbox -
+- FontAwesome -
 
 ## 🧞  Comandos Disponibles
 
@@ -56,12 +56,12 @@ Todos los comandos se ejecutan desde la raíz del proyecto, utilizando una termi
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| `npm install`             | Instala las dependencias                         |
+| `npm run dev`             | Inicia servidor local en `localhost:4321`        |
+| `npm run build`           | Construye el sitio para producción en`./dist/`   |
+| `npm run preview`         | Previsualiza el build localmentedeploying        |
+| `npm run astro ...`       | Ejecuta comandos CLI de Astro `                  |
+| `npm run astro -- --help` | Ayuda sobre la CLI de Astro                      |
 
 
 ## 🚀 Instalación y Configuración de Astro
@@ -71,7 +71,7 @@ Todos los comandos se ejecutan desde la raíz del proyecto, utilizando una termi
 - Verifica con: `node --version`
 - Si no lo tienes, descárgalo de [nodejs.org](https://nodejs.org)
 
-# 1. Entrar al proyecto
+# 1. Pegar ruta de cd
 cd nombre-del-proyecto
  Es necesario ingresar a la carpeta del proyecto para cargar los archivos y el proyecto.
 
@@ -83,11 +83,11 @@ npm create astro@latest
 #    - Nombre del proyecto
      * Simplemente escribe el nombre del proyecto y se reemplaza el texto preexistente.
 #    - Plantilla a usar
-     * Puedes elegir entre usar archivos simples, una plantilla de Blog, o un archivo vacío [6].
+     * Puedes elegir entre usar archivos simples, una plantilla de Blog, o un archivo vacío.
 #    - Instalar dependencias (Sí/No)
-     * Se recomienda instalarlas (puedes elegir "Sí" o instalarlas manualmente después) [6, 7].
+     * Se recomienda instalarlas (puedes elegir "Sí" o instalarlas manualmente después).
 #    - Inicializar Git (opcional)
-       Se te preguntará si deseas inicializar un repositorio de Git (puedes elegir "Sí" o "No") [7].
+       Se te preguntará si deseas inicializar un repositorio de Git (puedes elegir "Sí" o "No").
 
 # 4. Instalar dependencias (si no lo hiciste antes)
 npm install

@@ -140,7 +140,6 @@ const otrosRefugios = todosLosAlojamientos.filter(a => a.id !== alojamiento.id).
             document.getElementById('current').textContent = idx + 1;
         }
 
-        // Atajos
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeLightbox();
             if (e.key === 'ArrowRight') nextImage();
