@@ -1,19 +1,19 @@
 // Cabaña 1 
-import cabanaLumaImg from '../assets/images/Cabaña 1 (6 personas).jpg';
+import cabañaLumaImg from '../assets/images/Cabaña 1 (6 personas).jpg';
 import C1_2 from '../assets/images/C1-2.jpg';
 import C1_3 from '../assets/images/C1-3.jpg';
 import C1_4 from '../assets/images/C1-4.jpg';
 import C1_5 from '../assets/images/C1-5.jpg';
 
 // Cabaña 2 
-import cabanaFamiliarImg from '../assets/images/Cabaña de 2 (6 personas).jpg';
+import cabañaFamiliarImg from '../assets/images/Cabaña de 2 (6 personas).jpg';
 import C2_1 from '../assets/images/C2-1.jpeg';
 import C2_2 from '../assets/images/C2-2.jpeg';
 import C2_3 from '../assets/images/C2-3.jpeg';
 import C2_4 from '../assets/images/C2-4.jpeg';
 
 // Cabaña 3 
-import cabanaArrayanImg from '../assets/images/Cabaña 3 Hot Tub (7 personas).jpg';
+import cabañaArrayanImg from '../assets/images/Cabaña 3 Hot Tub (7 personas).jpg';
 import C3_1 from '../assets/images/C3.1.jpg';
 import C3_2 from '../assets/images/C3.2.jpg';
 import C3_3 from '../assets/images/C3.3.jpg';
@@ -23,7 +23,7 @@ import C3_6 from '../assets/images/C3.6.jpg';
 import C3_7 from '../assets/images/C3.7.jpg';
 
 // Cabaña Avellano
-import cabanaAvellanoImg from '../assets/images/Cabaña Avellano (2 personas).jpg';
+import cabañaAvellanoImg from '../assets/images/Cabaña Avellano (2 personas).jpg';
 import CA_1 from '../assets/images/CA.1.jpg';
 import CA_2 from '../assets/images/CA.2.jpg';
 import CA_3 from '../assets/images/CA.3.jpg';
@@ -63,7 +63,7 @@ export interface Alojamiento {
   descripcion: string;
   
   habitaciones: number;
-  banos: string;
+  baños: string;
   terraza: string;
   incluye: string;
   tag?: {
@@ -74,12 +74,12 @@ export interface Alojamiento {
 
 export const todosLosAlojamientos: Alojamiento[] = [
  {
-    id: 'cabana-arrayan',
+    id: 'cabaña-arrayan',
     titulo: 'Cabaña Arrayán',
     subtitulo: 'con Hot Tub Privado',
-    imagen: cabanaArrayanImg,
+    imagen: cabañaArrayanImg,
     galeria: [
-      cabanaArrayanImg,
+      cabañaArrayanImg,
       C3_1,
       C3_2,
       C3_3,
@@ -90,7 +90,7 @@ export const todosLosAlojamientos: Alojamiento[] = [
     ],
     capacidad: 'Hasta 7 personas',
     habitaciones: 3,
-    banos: '2 completos',
+    baños: '2 completos',
     terraza: 'Sí, con parrilla y Hot Tub',
     incluye: 'Wi-Fi y DIRECTV',
     tag: { texto: 'Con Hot Tub', color: 'bg-blue-500' },
@@ -111,19 +111,19 @@ export const todosLosAlojamientos: Alojamiento[] = [
     ],
     capacidad: 'Hasta 7 personas',
     habitaciones: 2,
-    banos: '2 completos',
+    baños: '2 completos',
     terraza: 'Sí, con parrilla',
     incluye: 'Wi-Fi y DIRECTV',
     tag: { texto: 'Domo', color: 'bg-teal-500' },
     descripcion: "Vive una experiencia única en nuestro domo geodésico más grande. Diseño innovador que se integra perfectamente con el entorno natural.",
  },
  {
-    id: 'cabana-familiar',
+    id: 'cabaña-familiar',
     titulo: 'Cabaña Familiar',
     subtitulo: 'Clásica del Sur',
-    imagen: cabanaFamiliarImg,
+    imagen: cabañaFamiliarImg,
     galeria: [
-      cabanaFamiliarImg,
+      cabañaFamiliarImg,
       C2_1,
       C2_2,
       C2_3,
@@ -131,18 +131,18 @@ export const todosLosAlojamientos: Alojamiento[] = [
     ],
     capacidad: 'Hasta 6 personas',
     habitaciones: 2,
-    banos: '2 completos',
+    baños: '2 completos',
     terraza: 'Sí, con parrilla',
     incluye: 'Wi-Fi y DIRECTV',
     descripcion: "El diseño clásico de una cabaña sureña con todas las comodidades modernas. Amplia y acogedora, perfecta para familias.",
  },
  {
-    id: 'cabana-luma',
+    id: 'cabaña-luma',
     titulo: 'Cabaña Luma',
     subtitulo: 'Corazón del Bosque',
-    imagen: cabanaLumaImg,
+    imagen: cabañaLumaImg,
     galeria: [
-      cabanaLumaImg,
+      cabañaLumaImg,
       C1_2,
       C1_3,
       C1_4,
@@ -150,7 +150,7 @@ export const todosLosAlojamientos: Alojamiento[] = [
     ],
     capacidad: 'Hasta 6 personas',
     habitaciones: 2,
-    banos: '2 completos',
+    baños: '2 completos',
     terraza: 'Sí, con parrilla',
     incluye: 'Wi-Fi y DIRECTV',
     descripcion: "Ubicada en el corazón de nuestro terreno, rodeada de árboles nativos. Tranquilidad absoluta y conexión con la naturaleza.",
@@ -169,7 +169,7 @@ export const todosLosAlojamientos: Alojamiento[] = [
     ],
     capacidad: 'Hasta 6 personas',
     habitaciones: 2,
-    banos: '1 completo',
+    baños: '1 completo',
     terraza: 'Sí, con parrilla',
     incluye: 'Wi-Fi y DIRECTV',
     tag: { texto: 'Domo', color: 'bg-teal-500' },
@@ -189,7 +189,7 @@ export const todosLosAlojamientos: Alojamiento[] = [
     ],
     capacidad: 'Hasta 4 personas',
     habitaciones: 1,
-    banos: '1 completo',
+    baños: '1 completo',
     terraza: 'Sí, con parrilla',
     incluye: 'Wi-Fi y DIRECTV',
     tag: { texto: 'Domo', color: 'bg-teal-500' },
@@ -199,9 +199,9 @@ export const todosLosAlojamientos: Alojamiento[] = [
     id: 'cabana-avellano',
     titulo: 'Cabaña Avellano',
     subtitulo: 'Nido para Dos',
-    imagen: cabanaAvellanoImg,
+    imagen: cabañaAvellanoImg,
     galeria: [
-      cabanaAvellanoImg,
+      cabañaAvellanoImg,
       CA_1,
       CA_2,
       CA_3,
@@ -211,7 +211,7 @@ export const todosLosAlojamientos: Alojamiento[] = [
     ],
     capacidad: 'Hasta 2 personas',
     habitaciones: 1,
-    banos: '1 completo',
+    baños: '1 completo',
     terraza: 'Sí, con parrilla',
     incluye: 'Wi-Fi y DIRECTV',
     tag: { texto: 'Para Parejas', color: 'bg-pink-500' },
